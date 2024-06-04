@@ -113,15 +113,23 @@ Estas 5 páginas serían entonces nuestros componentes padres, y ya después emp
 
 5. Importamos desde el componente principal `App` todos los demás componentes:
 
-    `import Home from '../Home'`
-    `import MyAccount from '../MyAccount'`
-    `import MyOrder from '../MyOrder'`
-    `import MyOrders from '../MyOrders'`
-    `import NotFound from '../NotFound'`
-    `import SignIn from '../SignIn'`
+    - `import Home from '../Home'`
+    - `import MyAccount from '../MyAccount'`
+    - `import MyOrder from '../MyOrder'`
+    - `import MyOrders from '../MyOrders'`
+    - `import NotFound from '../NotFound'`
+    - `import SignIn from '../SignIn'`
 
 6. De esta manera ya nos aparece en nuestra página principal, la prueba de que todos los componentes se reflejan en la página.
 
+## Enrutamiento con React Router Dom
+
+Ahora vamos a enlazar nuestras páginas con una ruta en específico, para ello vamos a instalar `React Router Dom`.
+
+1. `npm install react-router-dom` => instalar en la terminal
+2. `import { useRoutes } from 'react-router-dom';` => importamos este hook que vamos a utilizar
+3. Creamos una función aparte del componente `App` donde vamos a asignar las rutas a los componentes
+4. En el componente principal encapsulamos la función para poder visualizar en el navegador cada una de las rutas conectadas a los componentes => Ejemplo: `http://localhost:5173/sign-in`
 
 
 
