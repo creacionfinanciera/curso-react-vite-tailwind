@@ -7,6 +7,7 @@ import MyOrder from '../MyOrder';
 import MyOrders from '../MyOrders';
 import NotFound from '../NotFound';
 import SignIn from '../SignIn';
+import Navbar from '../../Components/Navbar'
 // y finalmente el css
 import './App.css'
 
@@ -26,10 +27,12 @@ const AppRoutes = () => {
 }
 
 // en nuestro componente principal, llamamos la función 'AppRoutes' para ver reflejada la ruta en el navegador, para cada componente definido en la función
+// también nos traemos nuestro Navbar
 const App = () => {
   return (
     <BrowserRouter>
       <AppRoutes />
+      <Navbar />
     </BrowserRouter>
   )
 }

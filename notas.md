@@ -131,6 +131,16 @@ Ahora vamos a enlazar nuestras páginas con una ruta en específico, para ello v
 3. Creamos una función aparte del componente `App` donde vamos a asignar las rutas a los componentes
 4. En el componente principal encapsulamos la función para poder visualizar en el navegador cada una de las rutas conectadas a los componentes => Ejemplo: `http://localhost:5173/sign-in`
 
+## Componente Navbar
+
+Ahora vamos a crear nuestro componente de `Navbar`, primero vamos a crear ese componente así como hicimos con las páginas, luego de crearlo vamos a importarlo en nuestro componente principal o padre, que es 'App', y luego vamos a estilizar nuestro navbar.
+
+1. Creamos una nueva carpeta llamada `Components`, dónde vamos a guardar todos los componentes que vamos a ir escribiendo
+2. Creamos al interior otra carpeta llamada `Navbar`, y al interior un archivo llamado `index.jsx`
+3. Consultamos la estructura de `Navlink` que nos propone `ReactRouter` en la siguiente página `https://reactrouter.com/en/main/components/nav-link`
+4. Comenzamos a crear el componente bajo esta estructura
+
+
 
 
 
