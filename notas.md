@@ -38,7 +38,7 @@
 
 ## Análisis de rutas y componentes en React
 
-Por dónde empezamos?, lo primero es reconocer las vistas que tenemos, cuales son las vistas padre?, a esas las vamos a llamar `pages` o páginas, y de ahí ya se empieza a desglosar toda la aplicación.
+1. Por dónde empezamos?, lo primero es reconocer las vistas que tenemos, cuales son las vistas padre?, a esas las vamos a llamar `pages` o páginas, y de ahí ya se empieza a desglosar toda la aplicación.
 
 Necesitamos reconocer cuales son las vistas principales, las grandes, las que contienen todos los elementos.
 
@@ -82,7 +82,46 @@ Cuando seleccionamos los productos que vamos a pedir en All o cualquiera de las 
 
 Estas 5 páginas serían entonces nuestros componentes padres, y ya después empezariamos entonces con el tema del redireccionamiento, que es, si damos clic en una de las páginas hijas entonces nos hace un enrutamiento en la url con un `/Clothes` o `/Furniture`.
 
-Entonces desde la página principal, tenemos que decirle, quiero que vayas a este lugar o a este otro lugar. Ya tenemos una comprensión de cuales son las vistas principales, cuales son las páginas, y ahora lo que vamos a hacer es enlazarlas unas con otras.
+2. Entonces desde la página principal, tenemos que decirle, quiero que vayas a este lugar o a este otro lugar. Ya tenemos una comprensión de cuales son las vistas principales, cuales son las páginas, y ahora lo que vamos a hacer es enlazarlas unas con otras. A continuación se muestra un esquema de como se distribuyen las páginas:
+
+![Draw](./img/Esquema.png)
+
+3. Vamos a VSC y creamos una carpeta que se llame `Pages`, y dentro creamos una carpeta por cada una de las páginas padre con su respectivo archivo 'index.jsx' y archivo 'style.css':
+    - `App` => `index.jsx`
+    - `Home` => `index.jsx`
+    - `MyAccount` => `index.jsx`
+    - `MyOrders` => `index.jsx`
+    - `MyOrder` => `index.jsx`
+    - `SignIn` => `index.jsx`
+    - `NotFound` => `index.jsx`
+
+4. Para cada una de las páginas creamos la estructura inicial del componente, ejemplo:
+
+    import './App.css'
+
+    function App() {
+    return (
+        <>
+        <div className="bg-red-100">
+            App
+        </div>
+        </>
+    )
+    }
+
+    export default App;
+
+5. Importamos desde el componente principal `App` todos los demás componentes:
+
+    `import Home from '../Home'`
+    `import MyAccount from '../MyAccount'`
+    `import MyOrder from '../MyOrder'`
+    `import MyOrders from '../MyOrders'`
+    `import NotFound from '../NotFound'`
+    `import SignIn from '../SignIn'`
+
+6. De esta manera ya nos aparece en nuestra página principal, la prueba de que todos los componentes se reflejan en la página.
+
 
 
 
