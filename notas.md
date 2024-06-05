@@ -140,6 +140,17 @@ Ahora vamos a crear nuestro componente de `Navbar`, primero vamos a crear ese co
 3. Consultamos la estructura de `Navlink` que nos propone `ReactRouter` en la siguiente página `https://reactrouter.com/en/main/components/nav-link`
 4. Comenzamos a crear el componente bajo esta estructura
 
+## Componente de Layout
+
+Aqui vamos a crear el componente de layout, tenemos unas páginas padres como home, my account, my order, etc. Pero ellas necesitan tener una visualización similar, por ejemplo, que todo el contenido esté en el centro, que tenga un margen superior para que no se toque tanto por el navbar, y pequeños detalles que necesitamos que sean iguales en todas estas pantallas.
+
+Para eso es que vamos a crear ese componente de layout, que va a tener esos estilos principales, y le vamos a colocar un pequeño hijo, y ese hijo va a ser home, my account, my orders, en fin. Asi que vamos a crearlo para poder encapsularlo en todas nuestras pantallas, y que ya tengamos el mismo estilo en todas esas páginas.
+
+1. Creamos una nueva carpeta `Layout` y su respectivo archivo `index.js`
+2. Creamos el componente `Layout`
+3. Llamamos desde cada uno de las páginas a nuestro componente `Layout`, y ya todas estas páginas quedan con los estilos definidos en dicho componente
+
+
 
 
 

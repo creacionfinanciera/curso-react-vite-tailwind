@@ -6,7 +6,7 @@ const Navbar = () => {
 
     return (
         // esta es la barra de navegación de la parte de arriba de la página principal
-        <nav className='flex justify-between items-center fixed z-10 w-full py-5 px-8 text-sm font-light'>
+        <nav className='flex justify-between items-center fixed z-10 top-0 w-full py-5 px-8 text-sm font-light'>
             {/* este es el primer contenedor que va hacia el lado izquierdo del navbar */}
             <ul className='flex items-center gap-3'>
                 <li className='font-semibold text-lg'>
