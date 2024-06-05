@@ -150,6 +150,15 @@ Para eso es que vamos a crear ese componente de layout, que va a tener esos esti
 2. Creamos el componente `Layout`
 3. Llamamos desde cada uno de las páginas a nuestro componente `Layout`, y ya todas estas páginas quedan con los estilos definidos en dicho componente
 
+## Componente de Card
+
+1. Creamos una nueva carpeta `Card` y su respectivo archivo `index.js`
+2. Creamos el componente `Card`
+3. Creamos la estructura del componente, según el contenido que tiene cada una de las cards
+4. Damos los estilos respectivos a esta primera card, con tailwind css
+
+
+
 
 
 
