@@ -157,6 +157,27 @@ Para eso es que vamos a crear ese componente de layout, que va a tener esos esti
 3. Creamos la estructura del componente, según el contenido que tiene cada una de las cards
 4. Damos los estilos respectivos a esta primera card, con tailwind css
 
+## Consumiendo la FakeStore API para pintar cards
+
+Ahora vamos a consumir la API de platzi, que es pública, dónde podemos también recibir esa información de los productos y poderlos pintar en nuestras cards, para poder visualizar esos productos y poder filtrarlos en las diferentes categorías que colocamos también en nuestro Navbar.
+
+Para poder consumir una API es recomendable antes leer la documentación, para entender primero que es lo que nos está dando, y ya después empezar con el proceso de pintado, de transformación de datos y demás.
+
+`https://fakeapi.platzi.com/` => vamos al sitio donde se encuentra la API, y entramos a la documentación dónde se encuentran los `endpoints`.
+
+`https://fakestoreapi.com/products` => finalmente utilice esta API porque la de platzi no me funcionó bien
+
+![API_State](./img/API_State.png)
+
+Nuestro componente `Home` es que va hasta la API y se trae toda la información de los productos y las imágenes, para posteriormente pintarlas en las distintas `Cards`, pero antes de hacer esto, creamos en `Home` un `STATE` que es unsa variable o una cajita, y en esa cajita va a almacenar toda la información que venga de la API, cuando Home ya la tenga ahí, entonces si la va a enviar a nuestras cards para pintarla.
+
+1. Creamos el `estado` en nuestro componente `Home`
+2. Luego consumimos la API con `useEffect`
+3. Retornamos en el componente cada una de las imagenes en un componente Card
+4. Llamamos desde el componente `Card` las propiedades que van en cada etiqueta y listo!
+
+
+
 
 
 
