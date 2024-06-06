@@ -12,13 +12,27 @@ export const ShoppingCartProvider = ({ children }) => {
     const [ count, setCount ] = useState(0);
     // console.log('COUNT: ', count)
 
+    // creamos un nuevo estado global para visualizar o no visualizar el component 'ProductDetail'
+    // si el usuario le da clic en la 'Card', el 'ProductDetail' se tiene que visualizar, pero si yo le doy Clic en la `X` se tiene que esconder
+    // lo vamos hacer a través de una variable que tiene que estar en 'true' o en 'false', y esa variable me va a mostrar o no, el 'ProductoDetail', pero quien va a controlar que se muestre o no, es cada una de las 'cards'
+    // el valor por inicial va a ser 'false' por defecto, porque recien entremos a la aplicación, no queremos que sea vea ese menú abierto, sino que solamente se abra cuando le demos clic en la 'Card'
+    const [ isProductDetailOpen, setIsProductDetailOpen ] = useState(false);
+
+    // ahora vamos a crear dos funciones que se van a encargar de cambiar el valor de 'isProductDetailOpen' cuando sean ejecutadas, para que sea 'true' o sea 'false'
+    const openProductDetail = () => setIsProductDetailOpen(true);
+    const closeProductDetail = () => setIsProductDetailOpen(false);
+
     return (
         // llamamos al proveedor del contexto que sería el wrapper, pero ese wrapper tiene que ser quien provea la información del contexto
         // y para que 'ShoppingCartContext.Provider' pueda proveer la información del estado a los diferentes hijos, le definimos la propiedad 'value'
         // entonces lo que estamos diciendo es que 'ShoppingCartContext.Provider' va a tener un hijo, que en este caso es el componente 'App', es decir, toda la aplicación (todos los componentes), y este hijo debe poder leer 'count' y tambien cualquier componente puede modificar ese valor de count con 'setCount'
+        // le damos a nuestro proveedor las dos funciones creadas que afectan a 'ProductDetail'
         <ShoppingCartContext.Provider value={{
             count,
-            setCount
+            setCount,
+            openProductDetail,
+            closeProductDetail,
+            isProductDetailOpen
         }}>
             { children }
         </ShoppingCartContext.Provider>
