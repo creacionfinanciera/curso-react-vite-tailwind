@@ -1,4 +1,5 @@
 import { useContext } from 'react';
+import { PlusIcon } from '@heroicons/react/24/solid';
 import { ShoppingCartContext } from '../../Context';
 
 // preparamos la card para recibir la información de la api, a través de 'data', que es el array dónde se encuentran todos nuestros elementos
@@ -14,7 +15,8 @@ const Card = (data) => {
                 <div className="absolute top-0 right-0 flex justify-center items-center bg-white w-6 h-6 rounded-full m-2 p-1"
                     // necesitamos que cuando el usuario de click en el '+', se vaya incrementando el contador del carrito de compras
                     onClick={() => context.setCount(context.count + 1)}>
-                    +
+                    {/* este es el icono del + traido de la librería 'Heroicons' */}
+                    <PlusIcon className="size-6 text-black"></PlusIcon>
                 </div>
             </figure>
             <p className="flex justify-between">

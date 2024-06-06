@@ -188,6 +188,16 @@ Podriamos crear el contexto en el componente `App`, pero en este caso por organi
 
 Creamos el componente `ProductDetail` en su propia carpeta, con su archivo `index.js` y hacemos los ajustes que se encuentran en el código.
 
+## Reto: heroicons on TailwindCSS
+
+1. Entramos a la página `https://heroicons.com/` y vemos la documentación
+2. `npm install @heroicons/react` => instalamos la dependencia
+3. `import { BeakerIcon } from '@heroicons/react/24/solid'` => Agregamos este import en la pagina de nuestro componente
+4. `<BeakerIcon></BeakerIcon>` => lo usamos como si fuera un componente
+5. `className="size-6 text-blue-500"` => le ponemos esta clase al componente
+6. Vamos a la libreria en la página y buscamos el icono que necesitamos
+7. Reemplazamos Beaker por el nombre del icono seleccionado, tanto en la importación como en el componente. No se incluye el guion que tiene el nombre en la librería
+
 
  
 
