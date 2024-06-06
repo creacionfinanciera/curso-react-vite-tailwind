@@ -198,6 +198,8 @@ Creamos el componente `ProductDetail` en su propia carpeta, con su archivo `inde
 6. Vamos a la libreria en la página y buscamos el icono que necesitamos
 7. Reemplazamos Beaker por el nombre del icono seleccionado, tanto en la importación como en el componente. No se incluye el guion que tiene el nombre en la librería
 
+## Agregando productos al carrito
+
 
 
 

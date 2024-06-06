@@ -25,6 +25,9 @@ export const ShoppingCartProvider = ({ children }) => {
     // cómo la API nos devuelve un array con varios objetos al entregarnos la información, y este estado se trata de almacenar esa información, entonces el estado inicial va a ser un objeto vacío
     const [productToShow, setProductToShow] = useState({});
 
+    // creamos un nuevo estado global que va a ser el carrito dónde se van a almacenar todos los productos que se vayan agregando
+    // para el estado inicial tambien nos basamos en como viene la información desde la API, que es un array de objetos
+    const [cartProducts, setCartProducts] = useState([]);
 
     return (
         // llamamos al proveedor del contexto que sería el wrapper, pero ese wrapper tiene que ser quien provea la información del contexto
@@ -39,7 +42,9 @@ export const ShoppingCartProvider = ({ children }) => {
             closeProductDetail,
             isProductDetailOpen,
             productToShow, 
-            setProductToShow
+            setProductToShow,
+            cartProducts,
+            setCartProducts
         }}>
             { children }
         </ShoppingCartContext.Provider>
