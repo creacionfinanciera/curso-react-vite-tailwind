@@ -184,6 +184,10 @@ React tiene algo muy interesante que se llama `context`, que nos habla precisame
 
 Podriamos crear el contexto en el componente `App`, pero en este caso por organización lo vamos a dejar aparte, creando afuera una nueva carpeta llamada `Context` y dentro un archivo llamado `index.jsx`
 
+## Abrir el detalle de cada producto
+
+Creamos el componente `ProductDetail` en su propia carpeta, con su archivo `index.js` y hacemos los ajustes que se encuentran en el código.
+
 
  
 
