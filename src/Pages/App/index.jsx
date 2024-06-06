@@ -1,5 +1,6 @@
 // en las importaciones siempre va primero todo lo de react
 import { useRoutes, BrowserRouter } from 'react-router-dom';
+import { ShoppingCartProvider } from '../../Context';
 // después los componentes
 import Home from '../Home';
 import MyAccount from '../MyAccount';
@@ -30,10 +31,14 @@ const AppRoutes = () => {
 // también nos traemos nuestro Navbar
 const App = () => {
   return (
-    <BrowserRouter>
+    // encerramos todo dentro de nuestro componente 'ShoppingCartProvider' y ya estariamos listos para empezar a crear todos nuestros estados y para empezar a comunicar todos los componetes con este estado global
+    <ShoppingCartProvider>
+      <BrowserRouter>
       <AppRoutes />
       <Navbar />
     </BrowserRouter>
+    </ShoppingCartProvider>
+    
   )
 }
 

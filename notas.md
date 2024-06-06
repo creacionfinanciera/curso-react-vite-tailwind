@@ -176,6 +176,17 @@ Nuestro componente `Home` es que va hasta la API y se trae toda la información 
 3. Retornamos en el componente cada una de las imagenes en un componente Card
 4. Llamamos desde el componente `Card` las propiedades que van en cada etiqueta y listo!
 
+## Contexto global de la aplicación
+
+Para comunicar o enlazar muchos elementos que deben estar interconectados unos con otros dentro de nuestra aplicación, para eso es mucho mejor que haya un estado global dentro de nuestra aplicación, para que se encargue de ser la fuente de verdad para poder mandarle información a todos los componentes y que nuestra aplicación pueda funcionar basada en esta fuente de verdad.
+
+React tiene algo muy interesante que se llama `context`, que nos habla precisamente de un estado global en nuestra aplicación. La razón por la cual no nos sirve tener un estado local, es decir, yb estado dentro de un componente en específico, es porque ya necesitamos muchos request, muchas solicitudes, desde muchas partes de la aplicación, que estan en varios componentes.
+
+Podriamos crear el contexto en el componente `App`, pero en este caso por organización lo vamos a dejar aparte, creando afuera una nueva carpeta llamada `Context` y dentro un archivo llamado `index.jsx`
+
+
+
+
 
 
 

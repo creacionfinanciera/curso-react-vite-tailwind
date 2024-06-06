@@ -2,7 +2,6 @@
 import { useState, useEffect } from 'react'; 
 import Card from '../../Components/Card';
 import Layout from '../../Components/Layout';
-import { data } from 'autoprefixer';
 
 function Home() {
     
@@ -32,7 +31,7 @@ function Home() {
             .then(data => setItems(data))
 
             // este manejo del error lo sugieren por fuera del video, entonces lo agrego
-            .catch(error => console.error('Error fetching data:', error))
+            //.catch(error => console.error('Error fetching data:', error))
             
     }, []);
 
@@ -55,8 +54,3 @@ function Home() {
 }
 
 export default Home;
-
-function prueba(data) {
-    console.log(data)
-
-}
