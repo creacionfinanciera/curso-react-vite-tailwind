@@ -202,6 +202,8 @@ Creamos el componente `ProductDetail` en su propia carpeta, con su archivo `inde
 
 
 
+
+
  
 
 
