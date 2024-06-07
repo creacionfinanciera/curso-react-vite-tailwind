@@ -17,11 +17,16 @@ const Card = (data) => {
     }
     
     // creamos la función que va a agregar los productos al carrito de compras, el argumento 'productData' es para recibir la información de 'data.data' que se esta enviando desde la propiedad de 'onClick'
-    const addProductsToCart = (productData) => {
+    const addProductsToCart = (event, productData) => {
+        // tambien agregamos el argumento 'event' para que muestre el 'CheckoutSideMenu', cuando el usuario da click en la x, y el 'event' se debe colocar en el mismo orden que se hizo en el 'onClick' del return
+        event.stopPropagation()
         // necesitamos que cuando el usuario de click en el '+', se vaya incrementando el contador del carrito de compras
         context.setCount(context.count + 1)
         // ahora lo único que tenemos que hacer es modificar ese estado, lo que queremos que haga es que deje lo que ya existe y agregue lo nuevo que hay
         context.setCartProducts([...context.cartProducts, productData])
+        // tambien queremos que abra este menu
+        context.openCheckoutSideMenu()
+        context.closeProductDetail()
         console.log('CART: ', context.cartProducts)
     }
 
@@ -35,8 +40,9 @@ const Card = (data) => {
                 <img className="w-full h-full object-cover rounded-lg" src={data.data.image} alt={data.data.title} />
                 <div 
                     className="absolute top-0 right-0 flex justify-center items-center bg-white w-6 h-6 rounded-full m-2 p-1"
-                    // al dar click sobre la X, se ejcuta la función que agrega productos al carrito
-                    onClick={() => addProductsToCart(data.data)}>
+                    // al dar click sobre la X, se ejecuta la función que agrega productos al carrito
+                    // le agregamos el 'event' para independizar al hacer click en la card y en la x, para que salga al dar click en la x el 'CheckoutSideMenu' y no el 'ProductDetail'
+                    onClick={(event) => addProductsToCart(event, data.data)}>
                     {/* este es el icono del + traido de la librería 'Heroicons' */}
                     <PlusIcon className="size-6 text-black"></PlusIcon>
                 </div>

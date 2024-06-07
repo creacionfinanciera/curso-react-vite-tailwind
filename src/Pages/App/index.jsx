@@ -9,6 +9,7 @@ import MyOrders from '../MyOrders';
 import NotFound from '../NotFound';
 import SignIn from '../SignIn';
 import Navbar from '../../Components/Navbar'
+import CheckoutSideMenu from '../../Components/CheckoutSideMenu';
 // y finalmente el css
 import './App.css'
 
@@ -36,6 +37,8 @@ const App = () => {
       <BrowserRouter>
       <AppRoutes />
       <Navbar />
+      {/* Este menú lo ponemos aqui en 'App' y no en 'Home' porque queremos abrirlo desde varios lugares de la aplicación */}
+      <CheckoutSideMenu />
     </BrowserRouter>
     </ShoppingCartProvider>
     

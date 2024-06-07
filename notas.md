@@ -198,7 +198,11 @@ Creamos el componente `ProductDetail` en su propia carpeta, con su archivo `inde
 6. Vamos a la libreria en la página y buscamos el icono que necesitamos
 7. Reemplazamos Beaker por el nombre del icono seleccionado, tanto en la importación como en el componente. No se incluye el guion que tiene el nombre en la librería
 
-## Agregando productos al carrito
+## SideMenu del Carrito de Compras
+
+Ahora vamos a tomar toda esa información que acabamos de agregar a nuestro carrito de compras, y la idea es poderla visualizar en un menú lateral, entonces lo primero que debemos hacer es crear ese menú lateral que vamos a llamar `checkout side menu`, y luego vamos a crear unas pequeñas `Cards` donde vamos a visualizar esos componentes o esos productos que ya tenemos en nuestro e-commerce, para que se vean justamente en el carrito de compras.
+
+Creamos una nueva carpeta `CheckoutSideMenu`, y adentro un archivo `index.jsx` y un archivo `style.css`.
 
 
 

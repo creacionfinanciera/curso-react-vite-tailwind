@@ -21,6 +21,11 @@ export const ShoppingCartProvider = ({ children }) => {
     const openProductDetail = () => setIsProductDetailOpen(true);
     const closeProductDetail = () => setIsProductDetailOpen(false);
 
+    // creamos un nuevo estado global para visualizar o no visualizar el component 'CheckoutSideMenu'
+    const [ isCheckoutSideMenuOpen, setIsCheckoutSideMenuOpen ] = useState(false);
+    const openCheckoutSideMenu = () => setIsCheckoutSideMenuOpen(true);
+    const closeCheckoutSideMenu = () => setIsCheckoutSideMenuOpen(false);
+
     // creamos un nuevo estado global para pintar la 'Card' seleccionada en 'ProductDetail', este estado debe almacenar la información de la 'Card'
     // cómo la API nos devuelve un array con varios objetos al entregarnos la información, y este estado se trata de almacenar esa información, entonces el estado inicial va a ser un objeto vacío
     const [productToShow, setProductToShow] = useState({});
@@ -44,7 +49,10 @@ export const ShoppingCartProvider = ({ children }) => {
             productToShow, 
             setProductToShow,
             cartProducts,
-            setCartProducts
+            setCartProducts,
+            isCheckoutSideMenuOpen,
+            openCheckoutSideMenu,
+            closeCheckoutSideMenu
         }}>
             { children }
         </ShoppingCartContext.Provider>
