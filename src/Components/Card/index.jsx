@@ -27,7 +27,7 @@ const Card = (data) => {
         // tambien queremos que abra este menu
         context.openCheckoutSideMenu()
         context.closeProductDetail()
-        console.log('CART: ', context.cartProducts)
+        // console.log('CART: ', context.cartProducts)
     }
 
     return (

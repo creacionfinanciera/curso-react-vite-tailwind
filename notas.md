@@ -204,6 +204,13 @@ Ahora vamos a tomar toda esa información que acabamos de agregar a nuestro carr
 
 Creamos una nueva carpeta `CheckoutSideMenu`, y adentro un archivo `index.jsx` y un archivo `style.css`.
 
+## Componente OrderCard
+
+Ahora vamos a crear nuestra `Card` pequeña para que la podamos visualizar en nuestro `CheckoutSideMenu`.
+
+1. Creamos una nueva carpeta `OrderCard` con su respectivo archivo `index.jsx`
+2. Todo el código se encuentra explicado en los componentes
+
 
 
 
