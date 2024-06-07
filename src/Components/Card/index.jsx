@@ -1,5 +1,5 @@
 import { useContext } from 'react';
-import { PlusIcon } from '@heroicons/react/24/solid';
+import { PlusIcon, CheckIcon } from '@heroicons/react/24/solid';
 import { ShoppingCartContext } from '../../Context';
 
 // preparamos la card para recibir la información de la api, a través de 'data', que es el array dónde se encuentran todos nuestros elementos
@@ -30,6 +30,34 @@ const Card = (data) => {
         // console.log('CART: ', context.cartProducts)
     }
 
+    // con respecto al boton '+' no queremos que se renderice la etiqueta 'div' que tiene el 'PlusIcon', sino solamente algunas veces, es decir, cuando no se haya agregado un producto de la misma referencia al carrito
+    const renderIcon = (id) => {
+        // si este producto (el 'id' que se esta enviando como parametro) esta dentro de 'cartProducts', entonces nos va a entregar 'true', de lo contrario nos entrega `false`
+        const isInCart = context.cartProducts.filter(product => product.id === id).length > 0
+        // ahora, dependiendo de ese valor booleano, vamos a pintar el ícono, si es 'true' pintamos el 'CheckIcon', si es 'false' pintamos el 'PlusIcon'
+        if (isInCart) {
+            // con este div renderizamos el 'check'
+            return (
+                <div className="absolute top-0 right-0 flex justify-center items-center bg-green-700 w-6 h-6 rounded-full m-2 p-1">
+                    {/* este es el icono del 'ckeck' traido de la librería 'Heroicons' */}
+                    <CheckIcon className="size-6 text-white"></CheckIcon>
+                </div> 
+            )
+        } else {
+            // con este div renderizamos el '+'
+            return (
+                <div 
+                    className="absolute top-0 right-0 flex justify-center items-center bg-gray-300 w-6 h-6 rounded-full m-2 p-1"
+                    // al dar click sobre la X, se ejecuta la función que agrega productos al carrito
+                    // le agregamos el 'event' para independizar al hacer click en la card y en la x, para que salga al dar click en la x el 'CheckoutSideMenu' y no el 'ProductDetail'
+                    onClick={(event) => addProductsToCart(event, data.data)}>
+                    {/* este es el icono del + traido de la librería 'Heroicons' */}
+                    <PlusIcon className="size-6 text-black"></PlusIcon>
+                </div> 
+            )
+        }
+    }
+
     return (
         <div className="bg-white w-56 h-60 cursor-pointer rounded-lg"
         // y aqui ejecutamos la función creada, al momento en que el usuario hace click
@@ -38,14 +66,7 @@ const Card = (data) => {
             <figure className="relative mb-2 w-full h-4/5">
                 <span className="absolute bottom-0 left-0 bg-white/60 rounded-lg text-black text-xs m-2 px-3 py-0.5">{data.data.category}</span>
                 <img className="w-full h-full object-cover rounded-lg" src={data.data.image} alt={data.data.title} />
-                <div 
-                    className="absolute top-0 right-0 flex justify-center items-center bg-white w-6 h-6 rounded-full m-2 p-1"
-                    // al dar click sobre la X, se ejecuta la función que agrega productos al carrito
-                    // le agregamos el 'event' para independizar al hacer click en la card y en la x, para que salga al dar click en la x el 'CheckoutSideMenu' y no el 'ProductDetail'
-                    onClick={(event) => addProductsToCart(event, data.data)}>
-                    {/* este es el icono del + traido de la librería 'Heroicons' */}
-                    <PlusIcon className="size-6 text-black"></PlusIcon>
-                </div>
+                {renderIcon(data.data.id)}
             </figure>
             <p className="flex justify-between">
                 <span className="text-sm font-light truncate mr-2">{data.data.title}</span>

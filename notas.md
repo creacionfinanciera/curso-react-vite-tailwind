@@ -211,6 +211,10 @@ Ahora vamos a crear nuestra `Card` pequeña para que la podamos visualizar en nu
 1. Creamos una nueva carpeta `OrderCard` con su respectivo archivo `index.jsx`
 2. Todo el código se encuentra explicado en los componentes
 
+## Evitando productos duplicados en el carrito
+
+En esta clase vamos a evitar duplicar todos esos elementos que vamos a agregar a nuestro carrito, es decir, que por producto la idea es que agreguemos solamente un elemento, y para ello lo que vamos a hacer es que el signo '+' que tenemos, ese icono, lo vamos a cambiar una vez le demos click, entonces le damos click a ese '+', el se agrega al carrito e inmediatamente cambia a un 'check' para verificar y para decirle al usuario tambien que ya agregó ese producto, y con eso bloqueamos tambien que el usuario pueda agregar más de un producto de la misma referencia al carrito de compras.
+
 
 
 
