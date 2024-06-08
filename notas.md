@@ -219,6 +219,10 @@ En esta clase vamos a evitar duplicar todos esos elementos que vamos a agregar a
 
 En esta clase vamos a eliminar nuestros productos del carrito de compras, de tal forma que cuando le demos click en la 'x' del 'OrderCard' se suprima ese producto del carrito.
 
+## Suma total de productos en el carrito
+
+La idea tambien es saber lo que tenemos que pagar posteriormente, entonces vamos a crear la función que nos va a permitir saber cual es el precio total, y tambien la visualización en nuestro componente de 'CheckoutSide Menu'.
+
 
 
 
