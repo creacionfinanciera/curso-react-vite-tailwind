@@ -223,6 +223,22 @@ En esta clase vamos a eliminar nuestros productos del carrito de compras, de tal
 
 La idea tambien es saber lo que tenemos que pagar posteriormente, entonces vamos a crear la función que nos va a permitir saber cual es el precio total, y tambien la visualización en nuestro componente de 'CheckoutSide Menu'.
 
+## Flujo para crear una nueva orden
+
+Ahora vamos a comenzar a crear una orden, y adicionalmente agregarla a un conjunto de ordenes.
+
+![Create_orders](./img/Create_orders.png)
+
+Hasta el momento nosotros como usuarios podemos visualizar el carrito de compras con los productos que hemos agregado y un total de lo que cuestan todos los productos seleccionados.
+
+Ahora, al final tiene que aparecer un boton que diga `check out`, el cual le va a permitir al usuario visualizar la compra de nuestros productos, pero para nosotros en la aplicación, el checkout es simplemente agregarlo a una lista de ordenes, y cuando ya se de esa compra, los productos que estan en el carrito tienen que desaparecer y el contador tambien debe regresar a 0, porque yo ya hice esa compra y ya no la quiero volver a hacer.
+
+Una vez tengamos la orden de compra lista, se tiene que guardar en un lugar que se va a llamar `My orders`, y si otro día diferente vuelve a hacer otra compra, pues la orden de compra correspondiente a este pedido, también deberá almacenarse en este lugar.
+
+Entonces vamos a tener un `estado` para `my order` y más adelante otro `estado` para `my orders`.
+
+
+
 
 
 
