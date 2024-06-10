@@ -1,9 +1,11 @@
 import { useContext } from 'react';
+import { Link } from 'react-router-dom';
 import { XMarkIcon } from '@heroicons/react/24/solid';
 import { ShoppingCartContext } from '../../Context';
 import OrderCard from '../../Components/OrderCard';
 import { totalPrice } from '../../utils';
 import './styles.css';
+
 
 const CheckoutSideMenu = () => {
     
@@ -72,8 +74,11 @@ const CheckoutSideMenu = () => {
                     <span className='font-light'>Total:</span>
                     <span className='font-medium text-2xl'>${totalPrice(context.cartProducts )}</span>
                 </p>
-                {/* creamos el botón con el cual se creará la orden de compra */}
-                <button className='bg-black py-3 text-white w-full rounded-lg' onClick={() => handleCheckout()}>Checkout</button>
+                {/* esto es para que a parte de ser un botón nos redirija hacia otra página al darle Click */}
+                <Link to='/my-orders/last'>
+                    {/* creamos el botón con el cual se creará la orden de compra */}
+                    <button className='bg-black py-3 text-white w-full rounded-lg' onClick={() => handleCheckout()}>Checkout</button>
+                </Link>
             </div>
             
         </aside>

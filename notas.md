@@ -237,6 +237,10 @@ Una vez tengamos la orden de compra lista, se tiene que guardar en un lugar que 
 
 Entonces vamos a tener un `estado` para `my order` y más adelante otro `estado` para `my orders`.
 
+## Checkout de productos en el carrito
+
+Ahora vamos a visualizar esa nueva orden que hicimos, en una página que nosotros ya creamos previamente que se llama `my orders`.
+
 
 
 

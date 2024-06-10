@@ -20,6 +20,8 @@ const AppRoutes = () => {
     { path: '/my-account', element: <MyAccount /> },
     { path: '/my-order', element: <MyOrder /> },
     { path: '/my-orders', element: <MyOrders /> },
+    // este es el último link de la página a la que nos lleva cuando damos click al botón de 'checkout'
+    { path: '/my-orders/last', element: <MyOrder /> },
     { path: '/sign-in', element: <SignIn /> },
     // cualquier otra ruta que no hayamos especificado, se indica con '*'
     { path: '/*', element: <NotFound /> },
