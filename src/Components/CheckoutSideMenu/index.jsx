@@ -17,6 +17,22 @@ const CheckoutSideMenu = () => {
         // le enviamos a nuestro estado, los productos filtrados
         context.setCartProducts(filteredProducts)
     } 
+
+    // creamos tambien una función para generar una orden de compra cada vez que hagamos click en el botón 'Checkout'
+    const handleCheckout = () => {
+        // definimos un objeto con la informació que necesitamos para la orden de compra
+        const orderToAdd = {
+            date: '01.02.23',
+            products: context.cartProducts,
+            totalProducts: context.cartProducts.length,
+            totalPrice: totalPrice(context.cartProducts)
+        }
+        // ahora necesitamos agregarla al estado 'order' que creamos en el contexto
+        context.setOrder([...context.order, orderToAdd])
+        // tambien cuando hacemos el checkout se tiene que limpiar esa orden, no queremos que se vuelva a agregar un segundo pedido a esta orden
+        context.setCartProducts([])
+
+    }
     
     return (
         <aside className={`${context.isCheckoutSideMenuOpen ? 'flex' : 'hidden'} checkout-side-menu flex-col fixed right-0 border border-black rounded-lg bg-white`}>
@@ -36,7 +52,7 @@ const CheckoutSideMenu = () => {
             {/* al final lo que le estamos diciendo es, en este 'aside' pintame por cada uno de los productos que yo ya tenga en mi carrito 'cartProducts', estos 4 elementos */}
             {/* como estamos renderizando la 'OrderCard' originalmente debe ir un 'return' para que lo podamos visualizar, y en este caso lo cambiamos por dos parentesis (), y asi no es necesario colocar la palabra 'return' */}
             {/* 'overflow-y-scroll' es para poder visualizar todos los productos que superan el alto de la pantalla, haciendo scroll, y que vayan apareciendo */}
-            <div className='px-6 overflow-y-scroll'>
+            <div className='px-6 overflow-y-scroll flex-1'>
             {
                 context.cartProducts.map(product => (
                     <OrderCard
@@ -51,11 +67,13 @@ const CheckoutSideMenu = () => {
             }
             </div>
 
-            <div className='px-6'>
-                <p className='flex justify-between items-center'>
+            <div className='px-6 mb-6'>
+                <p className='flex justify-between items-center mb-2'>
                     <span className='font-light'>Total:</span>
                     <span className='font-medium text-2xl'>${totalPrice(context.cartProducts )}</span>
                 </p>
+                {/* creamos el botón con el cual se creará la orden de compra */}
+                <button className='bg-black py-3 text-white w-full rounded-lg' onClick={() => handleCheckout()}>Checkout</button>
             </div>
             
         </aside>

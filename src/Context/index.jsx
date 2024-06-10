@@ -34,6 +34,9 @@ export const ShoppingCartProvider = ({ children }) => {
     // para el estado inicial tambien nos basamos en como viene la información desde la API, que es un array de objetos
     const [cartProducts, setCartProducts] = useState([]);
 
+    // creamos un nuevo estado global que va a ser la orden de compra que se va a generar
+    const [order, setOrder] = useState([]);
+
     return (
         // llamamos al proveedor del contexto que sería el wrapper, pero ese wrapper tiene que ser quien provea la información del contexto
         // y para que 'ShoppingCartContext.Provider' pueda proveer la información del estado a los diferentes hijos, le definimos la propiedad 'value'
@@ -52,7 +55,9 @@ export const ShoppingCartProvider = ({ children }) => {
             setCartProducts,
             isCheckoutSideMenuOpen,
             openCheckoutSideMenu,
-            closeCheckoutSideMenu
+            closeCheckoutSideMenu,
+            order,
+            setOrder
         }}>
             { children }
         </ShoppingCartContext.Provider>
