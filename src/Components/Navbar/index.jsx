@@ -23,6 +23,8 @@ const Navbar = () => {
                 <li>
                     <NavLink
                         to='/'
+                        // vamos a escuchar el click, para enviarle la categoría que queremos que muestre
+                        onClick={() => context.setSearchByCategory()}
                         // esto también se toma de la página de React Router, y se repite para todos los componentes
                         className={({ isActive }) =>
                             isActive ? activeStyle : undefined
@@ -33,6 +35,7 @@ const Navbar = () => {
                 <li>
                     <NavLink 
                         to='/clothes'
+                        onClick={() => context.setSearchByCategory("men's clothing")}
                         className={({ isActive }) =>
                             isActive ? activeStyle : undefined
                         }>
@@ -42,6 +45,7 @@ const Navbar = () => {
                 <li>
                     <NavLink 
                         to='/electronics'
+                        onClick={() => context.setSearchByCategory('electronics')}
                         className={({ isActive }) =>
                             isActive ? activeStyle : undefined
                         }>
@@ -50,25 +54,18 @@ const Navbar = () => {
                 </li>
                 <li>
                     <NavLink 
-                        to='/furnitures'
+                        to='/jewelery'
+                        onClick={() => context.setSearchByCategory('jewelery')}
                         className={({ isActive }) =>
                             isActive ? activeStyle : undefined
                         }>
-                        Furnitures
-                    </NavLink>
-                </li>
-                <li>
-                    <NavLink 
-                        to='/toys'
-                        className={({ isActive }) =>
-                            isActive ? activeStyle : undefined
-                        }>
-                        Toys
+                        Jewelery
                     </NavLink>
                 </li>
                 <li>
                     <NavLink 
                         to='/others'
+                        onClick={() => context.setSearchByCategory("women's clothing")}
                         className={({ isActive }) =>
                             isActive ? activeStyle : undefined
                         }>

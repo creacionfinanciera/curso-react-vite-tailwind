@@ -71,18 +71,48 @@ export const ShoppingCartProvider = ({ children }) => {
 
     // este estado es para el Input de busqueda de productos por título
     const [ searchByTitle, setSearchByTitle ] = useState(null);
-    console.log('searchByTitle: ', searchByTitle);
+    // console.log('searchByTitle: ', searchByTitle);
+    // este estado es para el cambio del home, según las categorías
+    const [ searchByCategory, setSearchByCategory ] = useState(null);
+    console.log('searchByCategory: ', searchByCategory)
 
     // a esta función vamos a enviarle los 'items' que ya tenemos previamemte de la API, y a hacer un filtrado dependiendo del estado 'searchByTitle'
     const filteredItemsByTitle = (items, searchByTitle) => {
         return items?.filter(item => item.title.toLowerCase().includes(searchByTitle.toLowerCase()))
     }
+    // hacemos algo muy parecido para el filtro por categorías
+    const filteredItemsByCategory = (items, searchByCategory) => {
+        // console.log('items: ', items)
+        return items?.filter(item => item.category.toLowerCase().includes(searchByCategory.toLowerCase()))
+    }
 
-    // ahora necesitamos guardar el resultado de la anterior función, en el estadon 'filteredItems'
+    // creamos una función para combinar los dos filtrados por título y categorías
+    const filterBy = (searchType, items, searchByTitle, searchByCategory) => {
+        if (searchType === 'BY_TITLE') {
+            return filteredItemsByTitle(items, searchByTitle)
+        }
+        if (searchType === 'BY_CATEGORY') {
+            return filteredItemsByCategory(items, searchByCategory)
+        }
+        if (searchType === 'BY_TITLE_AND_CATEGORY') {
+            return filteredItemsByCategory(items, searchByCategory).filter(item => item.title.toLowerCase().includes(searchByTitle.toLowerCase()))
+        }
+        if (!searchType) {
+            return items
+        }
+    }
+
+    // ahora necesitamos guardar el resultado de las anteriores funciones, en el estadon 'filteredItems'
     useEffect(() => {
-        if (searchByTitle) setFilteredItems(filteredItemsByTitle(items, searchByTitle))
-    }, [items, searchByTitle])
+        if (searchByTitle && searchByCategory) setFilteredItems(filterBy('BY_TITLE_AND_CATEGORY', items, searchByTitle, searchByCategory))
+        if (searchByTitle && !searchByCategory) setFilteredItems(filterBy('BY_TITLE', items, searchByTitle, searchByCategory))
+        if (!searchByTitle && searchByCategory) setFilteredItems(filterBy('BY_CATEGORY', items, searchByTitle, searchByCategory))
+        if (!searchByTitle && !searchByCategory) setFilteredItems(filterBy(null , items, searchByTitle, searchByCategory))
+    }, [items, searchByTitle, searchByCategory])
+    
     // console.log('filteredItems: ', filteredItems);
+
+    
 
     return (
         // llamamos al proveedor del contexto que sería el wrapper, pero ese wrapper tiene que ser quien provea la información del contexto
@@ -109,7 +139,9 @@ export const ShoppingCartProvider = ({ children }) => {
             setItems,
             searchByTitle,
             setSearchByTitle,
-            filteredItems
+            filteredItems,
+            searchByCategory,
+            setSearchByCategory
         }}>
             { children }
         </ShoppingCartContext.Provider>
