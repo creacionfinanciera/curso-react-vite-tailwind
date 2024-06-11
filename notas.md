@@ -255,6 +255,10 @@ En esta clase vamos a continuar con la visualización de nuestra lista de órden
 
 Aqui vamos a darle estilos a la página de `my-orders`.
 
+## Buscador de productos
+
+En esta clase ya vamos a comenzar con el buscador de nuestros productos, vamos a empezar a filtrar toda esa busqueda y a poderla mostrar dependiendo de los títulos y de las categorías, en esta clase vamos a empezar con el tema de los títulos.
+
 
 
 
