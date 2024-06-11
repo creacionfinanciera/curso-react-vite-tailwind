@@ -241,6 +241,14 @@ Entonces vamos a tener un `estado` para `my order` y más adelante otro `estado`
 
 Ahora vamos a visualizar esa nueva orden que hicimos, en una página que nosotros ya creamos previamente que se llama `my orders`.
 
+## Página de MyOrders: lista de órdenes
+
+En esta clase lo que vamos a hacer es poder visualizar todas las ordenes que nosotros creemos, para ello lo primero que vamos a hacer es una `Card`, y en esa card vamos a poder visualizar la fecha en la que nosotros hicimos `checkout`, la cantidad de productos, y adicional la idea es que podamos darle click a esa orden y que nos llevie directamente a visualizar todos los productos que hicimos en esa orden.
+
+Creamos entonces una nueva carpeta llamada `OrdersCard` con su respectivo archivo `index.jsx`.
+
+
+
 
 
 
