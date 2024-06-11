@@ -247,6 +247,10 @@ En esta clase lo que vamos a hacer es poder visualizar todas las ordenes que nos
 
 Creamos entonces una nueva carpeta llamada `OrdersCard` con su respectivo archivo `index.jsx`.
 
+## Página de MyOrder: órden individual
+
+En esta clase vamos a continuar con la visualización de nuestra lista de órdenes.
+
 
 
 

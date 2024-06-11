@@ -8,10 +8,14 @@ import OrderCard from '../../Components/OrderCard';
 function MyOrder() {
     
     const context = useContext(ShoppingCartContext);
+    const currentPath = window.location.pathname;
+    // esta variable es para cortar en la url todo aquello que está antes del último '/', incluyendo el último '/'
+    let index = currentPath.substring(currentPath.lastIndexOf('/') + 1)
+    if (index === 'last') index = context.order?.length - 1  
     
     return (
         <Layout>
-            <div className='flex items-center justify-center relative w-80 mb-6'>
+            <div className='flex items-center justify-center relative w-80 mb-6 '>
                 <Link to='/my-orders' className='absolute left-0'>
                     <ChevronLeftIcon className="size-6 text-black cursor-pointer" />
                 </Link>
@@ -19,7 +23,7 @@ function MyOrder() {
             </div> 
             <div className='flex flex-col w-80'>
             { /* si tienes una orden, entonces me vas a mostrar el último elemento de esa orden */
-                context.order.slice(-1)[0].products.map(product => (
+                context.order?.[index]?.products.map(product => (
                     <OrderCard
                         key={product.id}
                         id={product.id}
