@@ -251,6 +251,10 @@ Creamos entonces una nueva carpeta llamada `OrdersCard` con su respectivo archiv
 
 En esta clase vamos a continuar con la visualización de nuestra lista de órdenes.
 
+## Reto: órdenes de compra con TailwindCSS
+
+Aqui vamos a darle estilos a la página de `my-orders`.
+
 
 
 
