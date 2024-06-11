@@ -74,7 +74,7 @@ export const ShoppingCartProvider = ({ children }) => {
     // console.log('searchByTitle: ', searchByTitle);
     // este estado es para el cambio del home, según las categorías
     const [ searchByCategory, setSearchByCategory ] = useState(null);
-    console.log('searchByCategory: ', searchByCategory)
+    // console.log('searchByCategory: ', searchByCategory)
 
     // a esta función vamos a enviarle los 'items' que ya tenemos previamemte de la API, y a hacer un filtrado dependiendo del estado 'searchByTitle'
     const filteredItemsByTitle = (items, searchByTitle) => {

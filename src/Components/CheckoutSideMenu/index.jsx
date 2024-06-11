@@ -33,6 +33,8 @@ const CheckoutSideMenu = () => {
         context.setOrder([...context.order, orderToAdd])
         // tambien cuando hacemos el checkout se tiene que limpiar esa orden, no queremos que se vuelva a agregar un segundo pedido a esta orden
         context.setCartProducts([])
+        // esto es para que limpie el 'input', cuando estamos agregando productos al carrito, de tal manera que nos quite el filtrado, al momento de renderizar de nuevo los productos
+        context.setSearchByTitle (null)
 
     }
     

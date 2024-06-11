@@ -108,7 +108,7 @@ const Navbar = () => {
                 <li className='flex items-center'>
                     {/* este es el icono del carrito de compras traido de la librería 'Heroicons' */}
                     <ShoppingBagIcon className="size-6 text-black"></ShoppingBagIcon>
-                    <div>{context.count}</div> 
+                    <div>{context.cartProducts.length}</div> 
                 </li>
             </ul>
         </nav>
