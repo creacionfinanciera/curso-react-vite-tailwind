@@ -9,6 +9,29 @@ function Home() {
     
     const context = useContext(ShoppingCartContext);
 
+    // esta es la función que nos va a permitir renderizar por producto dependiendo de lo que se escriba en el input
+    const renderView = () => {
+        if (context.searchByTitle?.length > 0) {
+            if (context.filteredItems?.length > 0) {
+                return (
+                    context.filteredItems?.map(item => (
+                        <Card key={item.id} data={item} />
+                    ))
+                )
+            } else {
+                return (
+                    <div>We don't have anything :(</div>
+                )
+            }
+        } else {
+            return (
+                context.items?.map(item => (
+                    <Card key={item.id} data={item} />
+                ))
+            )
+        }
+    }
+
     return (
         <Layout>
             <div className='flex items-center justify-center relative w-80 mb-4'>
@@ -22,11 +45,7 @@ function Home() {
             {/* después de consumir la API, necesito que dependiendo de la cantidad de items, me muestre esa misma cantidad de cards */
             /* entonces llamamos a items, y con '?', decimos si este item está, como es un array podemos usar '.map', por cada uno de los elementos de ese array vamos a mostrar una Card, e inmediatamente se renderiza una de las Cards multiplicada por la cantidad de elementis que tenga el array */}
             <div className='grid gap-4 grid-cols-4 w-full max-w-screen-lg'>
-                { 
-                    context.items?.map(item => (
-                        <Card key={item.id} data={item} />
-                    ))
-                }
+                {renderView()}
             </div>
             <ProductDetail />
         </Layout>

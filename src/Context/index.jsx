@@ -42,6 +42,8 @@ export const ShoppingCartProvider = ({ children }) => {
     // setItems, es quien va a inyectar o va a setear el valor de los items, es decir, es quien va a almacenar en la cajita toda la información que necesitemos
     // dentro de (), vamos a poner un valor por defecto, que puede ser cualquier cosa dependiendo de lo que necesitemos, unas llaves indicando que va a ser un objeto en un futuro, o puede ser un array vacío, puede ser false, true, null. En este caso no queremos que tenga ningún valor inicial, entonces le ponemos 'null'
     const [ items, setItems ] = useState(null);
+    // y este estado es para el filtrado
+    const [ filteredItems, setFilteredItems ] = useState(null);
 
     // CONSUMO DE LA API
     // siempre que vayamos a hacer un consumo de una API en nuestra mente tiene que estar 'useEffect'
@@ -71,6 +73,17 @@ export const ShoppingCartProvider = ({ children }) => {
     const [ searchByTitle, setSearchByTitle ] = useState(null);
     console.log('searchByTitle: ', searchByTitle);
 
+    // a esta función vamos a enviarle los 'items' que ya tenemos previamemte de la API, y a hacer un filtrado dependiendo del estado 'searchByTitle'
+    const filteredItemsByTitle = (items, searchByTitle) => {
+        return items?.filter(item => item.title.toLowerCase().includes(searchByTitle.toLowerCase()))
+    }
+
+    // ahora necesitamos guardar el resultado de la anterior función, en el estadon 'filteredItems'
+    useEffect(() => {
+        if (searchByTitle) setFilteredItems(filteredItemsByTitle(items, searchByTitle))
+    }, [items, searchByTitle])
+    // console.log('filteredItems: ', filteredItems);
+
     return (
         // llamamos al proveedor del contexto que sería el wrapper, pero ese wrapper tiene que ser quien provea la información del contexto
         // y para que 'ShoppingCartContext.Provider' pueda proveer la información del estado a los diferentes hijos, le definimos la propiedad 'value'
@@ -95,7 +108,8 @@ export const ShoppingCartProvider = ({ children }) => {
             items,
             setItems,
             searchByTitle,
-            setSearchByTitle
+            setSearchByTitle,
+            filteredItems
         }}>
             { children }
         </ShoppingCartContext.Provider>

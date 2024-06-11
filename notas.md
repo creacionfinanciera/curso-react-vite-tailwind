@@ -259,6 +259,10 @@ Aqui vamos a darle estilos a la página de `my-orders`.
 
 En esta clase ya vamos a comenzar con el buscador de nuestros productos, vamos a empezar a filtrar toda esa busqueda y a poderla mostrar dependiendo de los títulos y de las categorías, en esta clase vamos a empezar con el tema de los títulos.
 
+## Filtrando títulos con Javacript
+
+En esta clase vamos a continuar con nuestro buscador, para ello lo que vamos a hacer es que vamos a hacer es que vamos a cambiar esa visualización de "Home", donde estamos desplegando ya todos los productos. Recuerda que nosotros tenemos en nuestron estado algo que se llama `items`, que es lo que permite que nosotros veamos esos productos en `home`, pero ahora tenemos que cambiar eso, tenemos que hacer un filtrado. Entonces, basado en eso que ya capturamos en la clase pasada, en el input, tenemos que utilizarlo para generar ese filtrado, y que `items` ya dependa de eso que escribamos nosotros.  
+
 
 
 
